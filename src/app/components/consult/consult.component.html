@@ -1,0 +1,113 @@
+<section id="consult-section">
+  <div class="dropdown">
+    <h2>Tipo do veículo</h2>
+    <select
+      style="width: 15rem"
+      class="form-select btn btn-secondary dropdown-toggle"
+      [(ngModel)]="vehicleType"
+      (change)="getBrands()"
+    >
+      <option class="dropdown-item" value="carros">Carro</option>
+      <option class="dropdown-item" value="motos">Moto</option>
+      <option class="dropdown-item" value="caminhoes">Caminhão</option>
+    </select>
+  </div>
+
+  <div class="dropdown">
+    <h2>Marca</h2>
+    <select
+      class="form-select btn btn-secondary dropdown-toggle"
+      name="name"
+      [(ngModel)]="brandCode"
+      (change)="getModels()"
+      style="width: 15rem"
+    >
+      <option
+        class="dropdown-item"
+        *ngFor="let marca of vehicleBrand"
+        [value]="marca.codigo"
+      >
+        {{ marca.nome }}
+      </option>
+    </select>
+  </div>
+
+  <div class="dropdown">
+    <h2>Modelo</h2>
+    <select
+      class="form-select btn btn-secondary dropdown-toggle"
+      [(ngModel)]="modelCode"
+      (change)="getYears()"
+      style="width: 20rem"
+    >
+      <option
+        class="dropdown-item"
+        *ngFor="let model of vehicleModels.modelos"
+        [value]="model.codigo"
+      >
+        {{ model.nome }}
+      </option>
+    </select>
+  </div>
+
+  <div class="dropdown">
+    <h2>Ano</h2>
+    <select
+      style="width: 10rem"
+      class="form-select btn btn-secondary dropdown-toggle"
+      [(ngModel)]="yearCode"
+      (change)="getValues()"
+    >
+      <option
+        class="dropdown-item"
+        *ngFor="let year of vehicleYear"
+        [value]="year.codigo"
+      >
+        {{ year.nome }}
+      </option>
+    </select>
+  </div>
+</section>
+
+<section id="section-form">
+  <h2>Valor da venda</h2>
+  <form class="input-group mb-3">
+    <span class="input-group-text">R$</span>
+    <input
+      class="form-control"
+      type="number"
+      name="valueEntered"
+      [(ngModel)]="valueEntered"
+    />
+    <button class="btn btn-primary" (click)="resultPercentage()">
+      CONSULTAR
+    </button>
+  </form>
+</section>
+
+<section id="result-section" *ngIf="showElement">
+  <div id="details-div">
+    <p><strong>Marca:</strong> {{ vehicleValue.Marca }}</p>
+    <p><strong>Modelo:</strong> {{ vehicleValue.Modelo }}</p>
+    <p><strong>Ano do modelo:</strong> {{ vehicleValue.AnoModelo }}</p>
+    <p><strong>Código FIPE:</strong> {{ vehicleValue.CodigoFipe }}</p>
+    <p><strong>Mês referência:</strong> {{ vehicleValue.MesReferencia }}</p>
+    <p>
+      <strong>Valor do veículo:</strong>
+      {{ valueEntered | currency : "BRL" }}
+    </p>
+    <p><strong>Valor pela FIPE:</strong> {{ vehicleValue.Valor }}</p>
+  </div>
+
+  <div id="result-percentage" [ngStyle]="{ color: colorPercentage }">
+    <p id="text-result">
+      {{ textPercentage }}
+    </p>
+    <p id="percentage-result">{{ numberPercentage }}</p>
+  </div>
+</section>
+<section *ngIf="showElement">
+  <div id="alert-info-div" [ngClass]="alertInfoClass" role="alert">
+    {{ alertInfoText }}
+  </div>
+</section>

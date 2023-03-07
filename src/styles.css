@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Signika", sans-serif;
+}
+
+body {
+  background: #f2f4f9;
+}
+
+/*Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #5c636a;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(13, 110, 253);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0b5ed7;
+}

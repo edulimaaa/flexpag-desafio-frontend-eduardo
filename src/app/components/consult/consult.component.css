@@ -1,0 +1,139 @@
+#consult-section {
+  display: flex;
+  gap: 3rem;
+  background-color: rgb(255, 255, 255);
+  width: 87.7%;
+  margin: auto;
+}
+
+.dropdown h2 {
+  font-size: 1.5rem;
+}
+
+#section-form h2 {
+  font-size: 1.5rem;
+}
+
+#section-form {
+  margin-top: 3rem;
+  width: 87.7%;
+  margin: 3rem auto;
+}
+
+#section-form form {
+  width: 100%;
+}
+
+#section-form input {
+  font-size: 1.5rem;
+}
+
+#result-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  align-items: center;
+  width: 85.7%;
+  margin: auto;
+}
+
+#alert-info-div {
+  width: 79%;
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+#result-percentage {
+  line-height: 5rem;
+  text-align: center;
+}
+
+#text-result {
+  font-size: 1.5rem;
+}
+
+#percentage-result {
+  font-size: 7rem;
+}
+
+@media (max-width: 1333px) {
+  #section-form {
+    width: 51.5rem;
+  }
+
+  #consult-section {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 60px 60px;
+    justify-content: space-between;
+    width: 51.5rem;
+  }
+
+  #result-section {
+    width: 51.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+  #alert-info-div {
+    width: 51.5rem;
+  }
+}
+
+@media (max-width: 930px) {
+  #section-form {
+    width: 68.7%;
+  }
+  #section-form h2 {
+    text-align: center;
+  }
+
+  #consult-section {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+    width: 68.7%;
+    margin: auto;
+    text-align: center;
+  }
+
+  #result-percentage {
+    line-height: 3rem;
+  }
+
+  #result-section {
+    flex-direction: column;
+    width: 68.7%;
+  }
+
+  #percentage-result {
+    font-size: 4rem;
+  }
+
+  #alert-info-div {
+    width: 68.7%;
+  }
+}
+
+@media (max-width: 890px) {
+  #section-form h2 {
+    text-align: center;
+  }
+
+  #result-percentage {
+    line-height: 2.5rem;
+  }
+  #text-result {
+    font-size: 1rem;
+  }
+  #result-section {
+    flex-direction: column;
+  }
+
+  #alert-info-div {
+    font-size: 1.5rem;
+  }
+}
