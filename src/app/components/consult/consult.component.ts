@@ -1,4 +1,4 @@
-import { Component, Directive, ElementRef, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -71,7 +71,7 @@ export class ConsultComponent {
 
   // calcular a variação de aumento do percentual e exibir resultado
   resultPercentage() {
-    if (this.valueEntered && this.valueFipe) {
+    if (this.yearCode) {
       // mostra todos os elementos do resultado
       this.showElement = true;
       // convertendo valores da tabela FIPE de string p/ number
