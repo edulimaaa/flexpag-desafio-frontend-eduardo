@@ -71,7 +71,7 @@ export class ConsultComponent {
 
   // calcular a variação de aumento do percentual e exibir resultado
   resultPercentage() {
-    if (this.yearCode) {
+    if (this.valueEntered && this.yearCode) {
       // mostra todos os elementos do resultado
       this.showElement = true;
       // convertendo valores da tabela FIPE de string p/ number
